@@ -1,0 +1,233 @@
+/* TIP CALCULATOR */
+.tip-calculator {
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: whitesmoke;
+}
+
+.tip-container {
+    width: 95%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    border: 2px solid lightblue;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    font-size: 1rem;
+    font-weight: 100;
+    box-shadow: 1px 3px 4px 0 lightblue;
+}
+
+.calculator input {
+    box-sizing: border-box;
+    font-family: inherit;
+    width: 85%;
+    padding: 8px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.calculator button {
+    font-family: inherit;
+    width: 15%;
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: lightblue;
+}
+
+.calculator button:hover {
+    border: 2px solid lightblue;
+    box-shadow: 2px 2px 2px lightblue;
+    background-color: whitesmoke;
+}
+
+#quality {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+}
+
+#tip-amount {
+    visibility: hidden;
+    min-width: 250px;
+    margin: auto;
+    background-color: lightgreen;
+    color: white;
+    bottom: 30px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+}
+
+#tip-amount.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s forwards, fadeout 0.5s 2.5s forwards;
+}
+
+@-webkit-keyframes fadein{
+    from{bottom: 0; opacity: 0;}
+    to{bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout{
+    from{bottom: 30px; opacity: 1;}
+    to{bottom: 0; opacity: 0;}
+
+}
+
+@keyframes fadein{
+    from{bottom: 0; opacity: 0;}
+    to{bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout{
+    from{bottom: 30px; opacity: 1;}
+    to{bottom: 0; opacity: 0;}
+}
+
+/* FLASHCARDS */
+.flashcards-project{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(128, 0, 128, 0.437);
+}
+
+.flashcards-header {
+    /* margin-top: 10px;
+    padding-top: 10px; */
+    background-color: rgba(128, 0, 128, 0.437);
+    border-radius: 0 0 20px 20px;
+    color: whitesmoke;
+    margin:auto;
+    padding: 10px;
+    box-shadow: 1px 2px 6px rgba(255, 255, 255, 0.425);
+
+}
+
+.flashcards-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flashcards-container{
+    width: 95%;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin: auto;
+    padding: 10px;
+}
+
+
+.flashcards-btn {
+    width: 10vw;
+    padding: 8px;
+    margin: 2px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    background-color: whitesmoke;
+}
+
+.flashcards-btn:hover {
+    background-color: rgb(160, 184, 231);
+    box-shadow: 2px 3px 6px rgba(255, 255, 255, 0.425);}
+.create-box{
+    width: 70vw;
+    max-width: 380px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: rgba(128, 0, 2, 0.165);
+    color: whitesmoke;
+    box-shadow: 1px 2px 6px rgba(255, 255, 255, 0.425);
+}
+
+.create-box textarea {
+    width: 90%;
+    border-radius: 10px;
+    font-family: inherit;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+
+.create-box button {
+    width: fit-content;
+}
+
+.flashcards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px 5px;
+}
+
+.flashcard {
+    width: 60vw;
+    max-width: 370px;
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+    word-wrap: break-word;
+    margin: 10px;
+    background-color: rgb(160, 184, 231);
+    color: white;
+    /* box-shadow: 1px 2px 6px rgba(255, 255, 255, 0.425); */
+}
+
+.flashcard h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+@media(max-width: 845px){
+    .flashcard{
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 45vw;
+    }
+}
+
+@media(max-width: 845px){
+    .flashcards{
+        justify-content: center;
+        align-items: center;
+    }
+    .flashcard{
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>More beginner projects</title>
+</head>
+<body>
+    <!-- tip calculator -->
+    <div class="tip-calculator">
+        <div class="tip-container">
+            <div class="calculator">
+                <h3 style="text-align:center; font-weight: bold; color: rgb(112, 191, 218)" >Tip Calculator</h3>
+                <p style="border-bottom: 2px solid lightgrey;"></p>
+                <br><label for="amount">Bill Amount</label>
+                <br>
+                <button><i class="fa-solid fa-dollar-sign"></i></button><input type="text" id="amount">
+                <br>
+                <br>
+                <label for="guest">Number of Guests</label>
+                <br>
+                <button><i class="fa-solid fa-person"></i></button><input type="text" id="guest">
+                <br>
+                <br>
+                <label for="quality">Service Quality</label>
+                <br>
+                <select name="" id="quality">
+                    <option disabled selected value="0">Choose...</option>
+                    <option value="0.3">30% - Outstanding</option>
+                    <option value="0.2">20% - Great</option>
+                    <option value="0.15">15% - Good</option>
+                    <option value="0.1">10% - Bad</option>
+                    <option value="0.05">5% - Terrible</option>
+                </select>
+                <div style="text-align: center;">
+                    <p style="border-top: 2px solid lightgray"></p>
+                    <button onclick="calculate()" style="width: fit-content; border-radius: 5px;">Calculate</button>
+                </div>
+            </div>
+            <div id="tip-amount">
+            </div>
+        </div>
+    </div>
+
+    <!-- Flashcards -->
+    <div class="flashcards-project">
+        <div class="flashcards-header">
+                <div class="flashcards-nav">
+                    <h1>Flashcards</h1>
+                    <div>
+                        <button class="flashcards-btn" onclick="showCreateCardBox()"><i class="fa-solid fa-plus"></i></button>
+                        <button class="flashcards-btn" onclick="delFlashcards()"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+        </div>
+        <div class="flashcards-container">
+            <div class="create-box">
+                <h2 style="text-align: center; color: white">Create Flashcard</h2>
+                <label for="question">Questions</label>
+                <textarea id="question"></textarea>
+                <br>
+                <label for="answer">Answer</label>
+                <textarea id="answer"></textarea>
+                <br>
+                <div>
+                    <button class="flashcards-btn" onclick="addFlashcard()">Save</button>
+                    <button class="flashcards-btn" onclick="hideCreateBox()">Close</button>
+                </div>
+            </div>
+            <div class="flashcards"></div>
+        </div>
+    </div>
+
+    <!-- To-Do List -->
+    <div class="to-do-list-project"></div>
+
+    <!-- Timer -->
+    <div class="timer-project"></div>
+
+    <!-- Math for kids -->
+    <div class="math-for-kids-project"></div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
