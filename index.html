@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>More beginner projects</title>
 </head>
 <body>
@@ -77,7 +80,19 @@
     </div>
 
     <!-- To-Do List -->
-    <div class="to-do-list-project"></div>
+    <div class="to-do-list-project">
+        <div class="to-do-container">
+            <div class="to-do-nav">
+                <h2><i class="fa-solid fa-clipboard-check"></i> TO DO</h2>
+                <div class="to-do-input">
+                    <input type="text" onclick="addItem()" id="input" placeholder="I need to..."><button><i class="-solid fa-circle-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="to-do-container">
+            <div class="to-do-items"></div>
+        </div>
+    </div>
 
     <!-- Timer -->
     <div class="timer-project"></div>

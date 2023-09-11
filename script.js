@@ -26,6 +26,7 @@ showTipAmount = () => {
     setTimeout(()=>{x.classList.remove('show'); }, 
     4500);
 }
+// ......................................
 
 // FLASHCARDS
 
@@ -94,5 +95,50 @@ function showCreateCardBox(){
 //hides the box after clicking on it once
 function hideCreateBox(){
     createBox.style.display='none';  
+}
+
+
+// .....................................
+// TO-DO LIST
+
+const toDoItems = document.getElementsByClassName("to-do-items")[0];
+const input = document.getElementById('input');
+const trashIcon = document.getElementById('trash');
+
+input.addEventListener("keydown", function(event){
+    if(event.key === "Enter")
+        addItem();
+})
+
+function addItem(){
+    console.log("addItem called");
+    let divParent = document.createElement('div');
+    let divChild = document.createElement('div');
+    const checkIcon = document.createElement('i');
+    const trashIcon = document.createElement('i');
+
+    divParent.className = "item";
+    divParent.innerHTML = "<div>"+input. value+"</div>"
+
+    checkIcon.className = "fa-solid fa-circle-check";
+    checkIcon.style.color = "white";
+    checkIcon.addEventListener("click", function(){
+        checkIcon.style.color = "green";
+    })
+
+    divChild.appendChild(checkIcon);
+
+    trashIcon.className = "fa-solid fa-trash-can";
+    trashIcon.style.color = "darkgray";
+    trashIcon.addEventListener("click", function(){
+        divParent.remove();
+    })
+
+    divChild.appendChild(trashIcon);
+
+    divParent.appendChild(divChild);
+
+    toDoItems.appendChild(divParent);
+    input.value = "";
 }
 
