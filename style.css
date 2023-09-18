@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* TIP CALCULATOR */
 .tip-calculator {
     height: 100vh;
@@ -108,16 +113,12 @@
 
 /* FLASHCARDS */
 .flashcards-project{
-    margin: 0;
-    padding: 0;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: rgba(128, 0, 128, 0.437);
 }
 
 .flashcards-header {
-    /* margin-top: 10px;
-    padding-top: 10px; */
     background-color: rgba(128, 0, 128, 0.437);
     border-radius: 0 0 20px 20px;
     color: whitesmoke;
@@ -140,7 +141,6 @@
     padding: 10px;
 }
 
-
 .flashcards-btn {
     width: 10vw;
     padding: 8px;
@@ -158,7 +158,9 @@
 
 .flashcards-btn:hover {
     background-color: rgb(160, 184, 231);
-    box-shadow: 2px 3px 6px rgba(255, 255, 255, 0.425);}
+    box-shadow: 2px 3px 6px rgba(255, 255, 255, 0.425);
+}
+
 .create-box{
     width: 70vw;
     max-width: 380px;
@@ -178,7 +180,6 @@
     border: 1px solid lightgray;
     padding: 10px;
 }
-
 
 .create-box button {
     width: fit-content;
@@ -204,7 +205,6 @@
     margin: 10px;
     background-color: rgb(160, 184, 231);
     color: white;
-    /* box-shadow: 1px 2px 6px rgba(255, 255, 255, 0.425); */
 }
 
 .flashcard h2 {
@@ -235,8 +235,6 @@
 
 /* TO DO LIST */
 .to-do-list-project {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: 'Fredoka', sans-serif;
     background-image: linear-gradient(to right, #e22865, #37adcd);
@@ -255,7 +253,7 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    margin: 25px 0;
+    padding: 25px 0;
 }
 
 .to-do-nav h2 {
@@ -306,7 +304,6 @@
     transition: 0.3s;
 }
 
-
 .to-do-input button:hover {
     background-color: #e2286635;
     box-shadow: inset 0 0px 30px #e2286645;
@@ -327,7 +324,7 @@
 .item {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
     height: auto;
     border-radius: 5px;
     padding: 16px;
@@ -364,4 +361,32 @@
     .to-do-input input {
         width: 40vw;
     }
+
+    .item {
+        width: 80vw;
+    }
+}
+
+/* TIMER */
+.timer-project {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    background-color: black;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.timer-container {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: yellow;
+    width: 100vw;
+    padding: 25px;
+}
+
+h1 {
+    text-align: center;
 }

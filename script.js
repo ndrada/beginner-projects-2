@@ -112,6 +112,9 @@ input.addEventListener("keydown", function(event){
 
 function addItem(){
     console.log("addItem called");
+    if(input.value.trim() === "") {
+        return; // If input value is empty or contains only whitespace, exit the function
+    }
     let divParent = document.createElement('div');
     let divChild = document.createElement('div');
     const checkIcon = document.createElement('i');
@@ -142,3 +145,102 @@ function addItem(){
     input.value = "";
 }
 
+
+//TIMER 
+let timeBegan = null; //did the clock start
+let timeStopped = null; //at what time was the timker stopped
+let stoppedDuration = 0; //how long was the timer stopped
+let startInterval = null;
+let flag = false; //to control the start/stop of the timer
+let lastTabPressTime = 0; // for keeping track of tab presses for start, stop and clear
+let lastTouchTime = 0; //same as tab but for touch screens
+
+const timerContainer = document.getElementsByClassName('timer-container')[0];
+
+timerContainer.addEventListener("click", function(){
+    if(!flag){
+        startTimer();
+        flag = true;
+    } else {
+        stopTimer();
+        flag = false;
+    }
+});
+
+timerContainer.addEventListener('touchend', function(event) {
+  let currentTime = new Date();
+  if (currentTime - lastTouchTime < 300) { // 300 ms threshold for double tap
+    resetTimer();
+  } else {
+    // single tap logic here (start/stop)
+    if(!flag) {
+      startTimer();
+      flag = true;
+    } else {
+      stopTimer();
+      flag = false;
+    }
+  }
+  lastTouchTime = currentTime;
+});
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Tab") {
+        let currentTime = new Date();
+        if(currentTime - lastTabPressTime < 500) { // 500 ms threshold for double press
+            resetTimer();
+        } else {
+            if(!flag){
+                startTimer();
+                flag = true;
+            } else {
+                stopTimer();
+                flag = false;
+            }
+        }
+        lastTabPressTime = currentTime;
+        event.preventDefault(); // Prevent the default tab key behavior
+    }
+});
+
+timerContainer.addEventListener("dblclick", function(){
+    resetTimer();
+})
+
+function startTimer(){
+    if(timeBegan === null){
+        timeBegan = new Date();
+    }
+
+    if(timeStopped !== null){
+        stoppedDuration += (new Date() - timeStopped);
+    }
+
+    startInterval = setInterval(clockRunning, 10);
+};
+
+function stopTimer(){
+    timeStopped = new Date();
+    clearInterval(startInterval);    
+};
+
+function clockRunning(){
+    let currentTime = new Date();
+    let timeElapsed = new Date(currentTime - timeBegan - stoppedDuration);
+    let minutes = timeElapsed. getUTCMinutes();
+    let seconds = timeElapsed.getUTCSeconds();
+    let milliseconds = timeElapsed.getUTCMilliseconds();
+
+    milliseconds = Math.floor(milliseconds/10);
+
+    document.getElementById('timer-display').innerHTML = (minutes = minutes < 10 ? '0' + minutes:minutes) + ":" + (seconds = seconds < 10 ? '0' + seconds:seconds) + ":" + (milliseconds = milliseconds < 10 ? "0" + milliseconds:milliseconds);
+};
+
+function resetTimer(){
+    clearInterval(startInterval);
+    timeBegan = null;
+    timeStopped = null;
+    stoppedDuration = null;
+    document.getElementById('timer-display').innerHTML = "00:00:00";
+    flag = false;
+}
